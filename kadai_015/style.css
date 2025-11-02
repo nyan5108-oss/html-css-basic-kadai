@@ -1,0 +1,30 @@
+body {
+     /* ここにCSSを書いていきます */
+     text-align: center;
+     font-family: "Arial", "Meiryo", sans-serif;
+}
+html {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px; /* ルート要素のフォントサイズ */
+}
+/* スカイブルーの文字 */
+.blue {
+  color: skyblue;
+}
+/* ピンクの文字 */
+.pink {
+  color: rgb(255, 192, 203);
+}
+.text-bold {
+ font-weight: bold;
+}
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem; /* ルート要素の2倍（htmlが20pxなら40px） */
+  letter-spacing: 1.2em;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid rgb(115, 115, 114);
+}
+#basic p {
+  font-weight: bold;
+}
