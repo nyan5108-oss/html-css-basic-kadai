@@ -1,0 +1,72 @@
+/* ===== div要素（id名「top」） ===== */
+#top {
+  width: 800px;                /* 横幅800px */
+  background-color: #dcc9f4;   /* 背景色 */
+  margin: 20px auto;           /* 上下20pxの余白 + 中央寄せ */
+  text-align: center;          /* 中のp要素を中央揃え */
+}
+
+/* ===== p要素（class名「top-child」） ===== */
+.top-child {
+  width: 20%;                  /* 親要素（#top）の20%の幅 */
+  background-color: #ffd9df;   /* 背景色 */
+  display: inline-block;       /* 横並びにする */
+}
+/* ===== div要素（id名「middle」） ===== */
+#middle {
+  width: 800px;                /* 横幅800px */
+  height: 800px;               /* 高さ800px */
+  margin: 20px auto;           /* 上下20pxの余白＋中央寄せ */
+  background-color: #ffd9df;   /* 背景色（薄いピンク） */
+  position: relative; 
+}
+
+/* ===== middle内の子要素3つに共通の装飾 ===== */
+#middle-child01,
+#middle-child02,
+#middle-child03 {
+  width: 200px;                /* 横幅200px */
+  height: 200px;               /* 高さ200px */
+  background-color: #87ceeb;   /* 背景色（スカイブルー） */
+  position: absolute;
+}
+/* ===== それぞれの位置指定 ===== */
+#middle-child01 {
+  top: 100px;   /* 上から100px */
+  left: 100px;  /* 左から100px */
+}
+
+#middle-child02 {
+  top: 300px;   /* 上から300px */
+  left: 300px;  /* 左から300px */
+}
+
+#middle-child03 {
+  top: 500px;   /* 上から500px */
+  left: 500px;  /* 左から500px */
+}
+/* ===== div要素（id名「bottom」） ===== */
+#bottom {
+  width: 800px;               /* 横幅800px */
+  height: 300px;              /* 高さ300px */
+  margin: 0 auto;             /* 中央寄せ（上下余白なし） */
+  background-color: #87ceeb;  /* 背景色（スカイブルー） */
+}
+
+/* ===== 子要素（id名「bottom-child01」「bottom-child02」「bottom-child03」）共通 ===== */
+#bottom-child01,
+#bottom-child02,
+#bottom-child03 {
+  width: 400px;               /* 横幅400px */
+  height: 100px;              /* 高さ100px */
+  background-color: #e5dcf0;  /* 背景色（淡い紫） */
+  position: relative; /* 元の位置から相対的に動かす */
+}
+/* ===== 個別の位置調整 ===== */
+#bottom-child02 {
+  left: 200px;   /* 左から200pxずらす（右方向へ移動） */
+}
+
+#bottom-child03 {
+  left: 400px;   /* 左から400pxずらす（さらに右方向へ移動） */
+}
