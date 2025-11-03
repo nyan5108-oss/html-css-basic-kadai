@@ -1,0 +1,123 @@
+/* すべての余白をリセット */
+body,
+h1,
+p {
+  margin: 0;
+}
+
+/* p要素とa要素の文字サイズを20pxにする */
+p,
+a {
+  font-size: 20px;
+}
+/* header要素のスタイル */
+header {
+  margin-bottom: 20px;              /* 下の余白を20px */
+  background-color: rgb(244, 79, 79); /* 背景色を指定 */
+  text-align: center;               /* 中の要素を中央揃え */
+}
+
+/* h1要素のスタイル */
+h1 {
+  color: rgb(255, 255, 255);        /* 文字色を白に */
+}
+/* main 全体 */
+main {
+  padding: 10px; /* 上下左右すべて10px */
+}
+
+/* parent を Flex コンテナにする */
+/* 子要素（.contents）を等間隔に並べる（左右端も含めて均等配置） */
+#parent {
+  display: flex;
+  justify-content: space-evenly; /* 一番左〜一番右を含め均等に配置 */
+  align-items: flex-start;       /* 子要素の上揃え（必要に応じ変更可） */
+  flex-wrap: wrap;               /* 画面幅が狭いときに折り返す */
+}
+
+/* .contents 共通スタイル */
+.contents {
+  box-sizing: border-box;                          /* パディング・ボーダーを幅に含める */
+  border: 3px solid rgb(238, 204, 204);            /* 3px 実線、指定色 */
+  flex-basis: 25%;                                 /* 幅は親の25%（widthではなく） */
+  padding: 10px 15px;                              /* 内側余白：上下10px、左右15px */
+  margin: 20px 0;                                  /* 外側余白：上下20px、左右0 */
+  text-align: center;                              /* 中の要素を中央揃え */
+}
+
+/* h2 のスタイル */
+.contents h2 {
+  font-size: 25px;                                 /* フォントサイズ25px */
+  border-bottom: 3px dotted rgb(236, 122, 122);   /* 下線：3px 点線 指定色 */
+  display: inline-block;                           /* 下線の幅がテキスト幅に追従するように */
+  padding-bottom: 6px;                             /* 下線と文字の間隔を調整（任意） */
+  margin: 0 0 10px 0;                              /* 見出し下の余白（任意調整） */
+}
+
+/* h2 の前に ● を表示 */
+.contents h2::before {
+  content: "●";
+  color: rgb(239, 111, 139);
+  display: inline-block;
+  margin-right: 8px; /* ● と文字の間隔 */
+  vertical-align: middle;
+}
+
+/* .contents 内の2番目の p の先頭文字だけにスタイルを当てる */
+/* 「nth-of-type(2)」で同じタグ内の2番目を選び、::first-letterで先頭1文字を指定 */
+.contents p:nth-of-type(2)::first-letter {
+  font-weight: bold;
+  color: rgb(97, 206, 249);
+}
+/* .contents 内の img 要素 */
+.contents img {
+  margin: 10px 0; /* 上下10px、左右0 */
+  width: 70%;     /* 幅を親要素の70%に */
+}
+/* footer全体のスタイル */
+footer {
+  background-color: rgb(244, 79, 79); /* 背景色 */
+  text-align: center;                /* 中央揃え */
+  padding: 10px;                     /* 少し余白を追加して見栄えを整える（任意） */
+}
+
+/* footer内のリンクのスタイル */
+footer a {
+  color: rgb(255, 255, 255);         /* 通常の文字色（白） */
+  text-decoration: none;             /* 下線を消す（任意） */
+}
+
+/* 訪問済みリンク */
+footer a:visited {
+  color: rgb(193, 234, 251);         /* 訪問済みリンクの色 */
+}
+
+/* ホバー時（マウスカーソルを乗せたとき） */
+footer a:hover {
+  color: rgb(245, 178, 168);         /* ホバー時の文字色 */
+}
+/* ブレークポイント：画面幅が768px以下のときのスタイル */
+@media (max-width: 768px) {
+  /* 見出し h2 を 30px に */
+  h2 {
+    font-size: 30px;
+  }
+
+  /* 段落 p を 25px に */
+  p {
+    font-size: 25px;
+  }
+
+  /* #parent（Flexコンテナ）を縦並びに */
+  #parent {
+    flex-direction: column;
+    align-items: center; /* 中央寄せにすると見栄えが良くなります */
+  }
+
+  /* 縦並びにしたときに .contents を幅いっぱいにしたい場合 */
+  .contents {
+    flex-basis: 100%; /* 各アイテムを1行占有にする */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
